@@ -21,9 +21,6 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// KB
-Route::resource('kb', 'KBController');
-
 // blog
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('blog', ['uses' => 'BlogController@getIndex', 'as' => 'blog.index']);
